@@ -1,0 +1,1 @@
+/Users/xcorex/Documents/Projects/EagleCad/projects/lifepatch/midicontroller/midicontroller/babymidiproto2_shield.sch
