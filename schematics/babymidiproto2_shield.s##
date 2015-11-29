@@ -1103,7 +1103,7 @@ DO-41 glass case</description>
 <part name="R3" library="manticore-lib" deviceset="7MM" device="" value="1K5"/>
 <part name="Z1" library="manticore-lib" deviceset="1N47XX" device="2" value="3.3V"/>
 <part name="Z2" library="manticore-lib" deviceset="1N47XX" device="2" value="3.3V"/>
-<part name="K1" library="manticore-lib" deviceset="651005136521" device="2"/>
+<part name="K1" library="manticore-lib" deviceset="651005136521" device="2" value="Mini USB connector"/>
 <part name="IC1" library="manticore-lib" deviceset="4051" device="N"/>
 <part name="P+1" library="supply1" deviceset="VCC" device=""/>
 <part name="GND1" library="supply" deviceset="GND" device=""/>
