@@ -10,7 +10,7 @@
 #include "WProgram.h"
 #endif
 
-#define AnalogMultiplexerPin_LIB_VERSION "0.1.04"
+#define AnalogMultiplexerPin_LIB_VERSION "0.1"
 
 class AnalogMultiplexerPin
 {
@@ -34,9 +34,9 @@ public:
     int read(const uint8_t _pin_index, const uint8_t noise = 0);
 
     // alpha 0..31;
-    int readSmoothed(const uint8_t _pin_index, uint8_t alpha = 0);
+    // int readSmoothed(const uint8_t _pin_index, uint8_t alpha = 0);
 
-    int readPrevious(const uint8_t _pin_index);
+    // int readPrevious(const uint8_t _pin_index);
 
 
 

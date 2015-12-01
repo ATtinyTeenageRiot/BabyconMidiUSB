@@ -2,24 +2,28 @@
 #include "AnalogMultiplexerPin.h"
 
 #define NOISE_RATIO 10
-//#define DELAY_AFTER_READ 5
+#define DELAY_AFTER_READ 5
 #define NUM_CHANNEL 4
 
-unsigned char selected[NUM_CHANNEL] = {4,5,6,7};
-//unsigned char selected[NUM_CHANNEL] = {0,1,2,3};
+uint8_t selected[NUM_CHANNEL] = {4,5,6,7};
+//uint8_t selected[NUM_CHANNEL] = {0,1,2,3};
+//uint8_t selected[NUM_CHANNEL] = {0,1,2,3,4,5,6,7};
 
+//multiplexer setup
 #define _S1 1
 #define _S2 0
 #define _S3 4
-#define MULTIPLEXED_ANALOG_PIN 2  //analog pin connected to multiplexer
+
+//analog pin connected to multiplexer
+#define MULTIPLEXED_ANALOG_PIN 2  
 
 AnalogMultiplexerPin multiplexer;
 
-int channel;
+uint8_t channel;
 
-unsigned char values[8]       = {0,0,0,0,0,0,0,0};
-unsigned char values_old[8]   = {1,1,1,1,1,1,1,1};
-unsigned char value_order[8]  = {3,0,1,2,5,7,6,4};
+uint8_t values[8]       = {0,0,0,0,0,0,0,0};
+uint8_t values_old[8]   = {1,1,1,1,1,1,1,1};
+uint8_t value_order[8]  = {3,0,1,2,5,7,6,4}; //remap multiplexer pin
 
 void setup ( ) {
     multiplexer.setup(_S1, _S2, _S3, MULTIPLEXED_ANALOG_PIN);
@@ -29,7 +33,7 @@ void setup ( ) {
     }
 }
 
-void readChannel (unsigned char num, unsigned char order )
+uint8_t readChannel (unsigned char num, unsigned char order )
 {
     // read value
     values[order] = multiplexer.read(value_order[num], NOISE_RATIO)>>3;  
