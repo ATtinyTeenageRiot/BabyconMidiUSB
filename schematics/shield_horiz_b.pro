@@ -2,8 +2,8 @@ EAGLE AutoRouter Statistics:
 
 Job           : /Users/xcorex/Documents/Projects/AVR/BabyconMidiUSB/schematics/shield_horiz_b.brd
 
-Start at      : 16:46:28 (11/29/15)
-End at        : 16:46:28 (11/29/15)
+Start at      : 17:26:45 (11/29/15)
+End at        : 17:26:45 (11/29/15)
 Elapsed time  : 00:00:00
 
 Signals       :    15   RoutingGrid: 50 mil  Layers: 2
