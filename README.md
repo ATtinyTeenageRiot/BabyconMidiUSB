@@ -1,3 +1,3 @@
 ## BabyconMidiUSB
 
-![babymidipin.png]({{site.baseurl}}/babymidipin.png)
+![babymidipin.png](https://raw.githubusercontent.com/ATtinyTeenageRiot/BabyconMidiUSB/master/babymidipin.png)
