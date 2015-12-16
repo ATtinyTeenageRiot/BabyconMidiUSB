@@ -26,6 +26,7 @@ uint8_t values_old[8]   = {1,1,1,1,1,1,1,1};
 uint8_t value_order[8]  = {3,0,1,2,5,7,6,4}; //remap multiplexer pin
 
 void setup ( ) {
+    MIDI.init();
     multiplexer.setup(_S1, _S2, _S3, MULTIPLEXED_ANALOG_PIN);
     delay(100);
     for (channel = 0; channel < NUM_CHANNEL; channel++) {
@@ -52,6 +53,8 @@ void loop () {
         values_old[channel] = values[channel];
     }
   }
+
+  MIDI.flush();
   
 }
 
