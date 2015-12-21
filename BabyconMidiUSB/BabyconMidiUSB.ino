@@ -28,7 +28,6 @@ uint8_t value_order[8]  = {3,0,1,2,5,7,6,4}; //remap multiplexer pin
 void setup ( ) {
     MIDI.init();
     multiplexer.setup(_S1, _S2, _S3, MULTIPLEXED_ANALOG_PIN);
-    delay(100);
     for (channel = 0; channel < NUM_CHANNEL; channel++) {
       multiplexer.setInitialValue(value_order[channel]);
     }
@@ -40,7 +39,7 @@ uint8_t readChannel (unsigned char num, unsigned char order )
     values[order] = multiplexer.read(value_order[num], NOISE_RATIO)>>3;  
     
     #ifdef DELAY_AFTER_READ
-    delay(DELAY_AFTER_READ);
+    MIDI.delay(DELAY_AFTER_READ);
     #endif
 }
 
