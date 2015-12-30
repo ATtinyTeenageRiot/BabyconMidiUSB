@@ -6,9 +6,9 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="2" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="2" display="yes" altdistance="1" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
@@ -143,7 +143,6 @@
 <wire x1="0" y1="1.27" x2="0" y2="55.55" width="0.254" layer="20"/>
 <wire x1="0" y1="55.55" x2="27.94" y2="55.55" width="0.254" layer="20"/>
 <wire x1="27.94" y1="55.55" x2="27.94" y2="1.27" width="0.254" layer="20"/>
-<rectangle x1="13.97" y1="33.02" x2="14.605" y2="34.29" layer="16"/>
 </plain>
 <libraries>
 <library name="manticore-lib">
@@ -488,7 +487,7 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="U1" library="manticore-lib" package="DIP08" value="TINY85-20-DIP" x="13.97" y="24.13">
+<element name="ATTINY_BABYGNUSBUINO" library="manticore-lib" package="DIP08" value="TINY85-20-DIP" x="13.97" y="24.13">
 <attribute name="PROD_ID" value="IC-09445" x="13.97" y="24.13" size="1.778" layer="27" display="off"/>
 </element>
 <element name="R1" library="manticore-lib" package="0703" value="68" x="16.51" y="17.78" rot="R180"/>
@@ -496,23 +495,20 @@ design rules under a new name.</description>
 <element name="R3" library="manticore-lib" package="0703" value="1K5" x="2.54" y="21.59" rot="R90"/>
 <element name="Z1" library="manticore-lib" package="DO41-2" value="3.3V" x="17.78" y="15.24"/>
 <element name="Z2" library="manticore-lib" package="DO41-2" value="3.3V" x="22.86" y="10.16" rot="R90"/>
-<element name="K1" library="manticore-lib" package="MINIUSB_DIP" value="6510051365212" x="13.97" y="7.62" rot="R180"/>
-<element name="IC1" library="manticore-lib" package="DIL16" value="4051N" x="13.97" y="41.91" rot="R90"/>
-<element name="SV8" library="manticore-lib" package="FE05-1-SQUARE-BIG" value="" x="7.62" y="38.1" rot="R90"/>
-<element name="SV9" library="manticore-lib" package="FE05-1-SQUARE-BIG" value="" x="20.32" y="38.1" rot="R90"/>
+<element name="MINIUSB_CONNECTOR" library="manticore-lib" package="MINIUSB_DIP" value="6510051365212" x="13.97" y="7.62" rot="R180"/>
+<element name="MULTIPLEXER" library="manticore-lib" package="DIL16" value="4051N" x="13.97" y="41.91" rot="R90"/>
+<element name="PINHEADER_1_4" library="manticore-lib" package="FE05-1-SQUARE-BIG" value="" x="7.62" y="38.1" rot="R90"/>
+<element name="PINHEADER_5_8" library="manticore-lib" package="FE05-1-SQUARE-BIG" value="" x="20.32" y="38.1" rot="R90"/>
 </elements>
 <signals>
 <signal name="GND">
-<contactref element="K1" pad="5"/>
+<contactref element="MINIUSB_CONNECTOR" pad="5"/>
 <contactref element="Z1" pad="A"/>
 <contactref element="Z2" pad="A"/>
-<contactref element="U1" pad="4"/>
-<contactref element="IC1" pad="8"/>
-<contactref element="IC1" pad="8"/>
-<contactref element="IC1" pad="7"/>
-<contactref element="IC1" pad="6"/>
+<contactref element="MULTIPLEXER" pad="8"/>
+<contactref element="MULTIPLEXER" pad="8"/>
+<contactref element="MULTIPLEXER" pad="7"/>
 <wire x1="17.78" y1="50.8" x2="17.78" y2="48.26" width="1.016" layer="16"/>
-<wire x1="17.78" y1="48.26" x2="17.78" y2="45.72" width="1.016" layer="16"/>
 <polygon width="1.27" layer="16" isolate="1.27">
 <vertex x="22.86" y="33.02"/>
 <vertex x="27.94" y="33.02"/>
@@ -526,8 +522,6 @@ design rules under a new name.</description>
 <vertex x="22.86" y="22.86"/>
 <vertex x="17.78" y="22.86"/>
 </polygon>
-<contactref element="SV9" pad="1"/>
-<wire x1="20.32" y1="33.02" x2="24.13" y2="33.02" width="1.27" layer="16"/>
 <wire x1="20.32" y1="15.24" x2="15.6208" y2="11.314" width="1.016" layer="16"/>
 <wire x1="15.6208" y1="11.43" x2="15.6208" y2="11.314" width="1.016" layer="16"/>
 <wire x1="15.6208" y1="11.314" x2="15.6208" y2="11.049" width="1.016" layer="16"/>
@@ -545,28 +539,31 @@ design rules under a new name.</description>
 <vertex x="5.08" y="53.34"/>
 <vertex x="5.08" y="50.8"/>
 </polygon>
-<wire x1="22.86" y1="20.32" x2="17.78" y2="20.32" width="0.254" layer="16"/>
+<contactref element="MULTIPLEXER" pad="6"/>
+<contactref element="ATTINY_BABYGNUSBUINO" pad="4"/>
+<contactref element="PINHEADER_5_8" pad="1"/>
+<wire x1="20.32" y1="33.02" x2="24.13" y2="33.02" width="1.27" layer="16"/>
 </signal>
 <signal name="VCC">
-<contactref element="K1" pad="1"/>
+<contactref element="MINIUSB_CONNECTOR" pad="1"/>
 <contactref element="R3" pad="2"/>
-<contactref element="U1" pad="8"/>
-<contactref element="IC1" pad="16"/>
-<contactref element="IC1" pad="16"/>
+<contactref element="MULTIPLEXER" pad="16"/>
+<contactref element="MULTIPLEXER" pad="16"/>
 <wire x1="12.3192" y1="11.314" x2="11.1" y2="12.7" width="1.016" layer="16"/>
 <wire x1="11.1" y1="12.7" x2="7.62" y2="12.7" width="1.016" layer="16"/>
 <wire x1="7.62" y1="12.7" x2="7.62" y2="17.78" width="1.016" layer="16"/>
 <wire x1="7.62" y1="17.78" x2="2.54" y2="22.86" width="1.016" layer="16"/>
 <wire x1="2.54" y1="22.86" x2="2.54" y2="25.4" width="1.016" layer="16"/>
-<wire x1="10.16" y1="27.94" x2="10.16" y2="33.02" width="1.27" layer="16"/>
-<contactref element="SV8" pad="1"/>
-<wire x1="7.62" y1="33.02" x2="10.16" y2="33.02" width="1.27" layer="16"/>
 <wire x1="12.3192" y1="11.314" x2="12.3192" y2="11.049" width="1.016" layer="16"/>
 <wire x1="2.54" y1="25.4" x2="2.54" y2="33.02" width="1.27" layer="16"/>
+<contactref element="ATTINY_BABYGNUSBUINO" pad="8"/>
+<contactref element="PINHEADER_1_4" pad="1"/>
+<wire x1="10.16" y1="33.02" x2="7.62" y2="33.02" width="1.27" layer="16"/>
+<wire x1="10.16" y1="33.02" x2="10.16" y2="27.94" width="1.27" layer="16"/>
 <wire x1="2.54" y1="33.02" x2="7.62" y2="33.02" width="1.27" layer="16"/>
 </signal>
 <signal name="N$2">
-<contactref element="K1" pad="3"/>
+<contactref element="MINIUSB_CONNECTOR" pad="3"/>
 <contactref element="Z1" pad="C"/>
 <contactref element="R1" pad="1"/>
 <wire x1="13.97" y1="11.314" x2="13.97" y2="13.97" width="1.016" layer="16"/>
@@ -576,7 +573,7 @@ design rules under a new name.</description>
 <wire x1="17.78" y1="17.78" x2="15.24" y2="15.24" width="1.016" layer="16"/>
 </signal>
 <signal name="N$3">
-<contactref element="K1" pad="2"/>
+<contactref element="MINIUSB_CONNECTOR" pad="2"/>
 <contactref element="Z2" pad="C"/>
 <contactref element="R2" pad="1"/>
 <contactref element="R3" pad="1"/>
@@ -588,34 +585,27 @@ design rules under a new name.</description>
 <wire x1="2.54" y1="12.7" x2="2.54" y2="15.24" width="0.8128" layer="16"/>
 <wire x1="2.54" y1="15.24" x2="2.54" y2="17.78" width="1.27" layer="16"/>
 </signal>
-<signal name="N$1">
-<contactref element="R2" pad="2"/>
-<contactref element="U1" pad="1"/>
-<wire x1="10.16" y1="15.24" x2="10.16" y2="20.32" width="1.27" layer="16"/>
-</signal>
-<signal name="N$4">
+<signal name="D_PLUS">
 <contactref element="R1" pad="2"/>
-<contactref element="U1" pad="2"/>
-<wire x1="12.7" y1="17.78" x2="12.7" y2="20.32" width="1.27" layer="16"/>
+<contactref element="ATTINY_BABYGNUSBUINO" pad="2"/>
+<wire x1="12.7" y1="17.78" x2="12.7" y2="20.32" width="0.254" layer="1"/>
 </signal>
-<signal name="N$5">
-<contactref element="IC1" pad="3"/>
-<contactref element="U1" pad="7"/>
+<signal name="MULTIPLEXED_ANALOG_PIN">
+<contactref element="ATTINY_BABYGNUSBUINO" pad="7"/>
 <wire x1="20.32" y1="30.48" x2="17.78" y2="30.48" width="0.8128" layer="16"/>
 <wire x1="17.78" y1="30.48" x2="15.24" y2="33.02" width="0.8128" layer="16"/>
 <wire x1="15.24" y1="33.02" x2="15.24" y2="38.1" width="0.8128" layer="16"/>
-<wire x1="15.24" y1="38.1" x2="17.78" y2="38.1" width="0.8128" layer="16"/>
 <wire x1="12.7" y1="27.94" x2="12.7" y2="25.4" width="0.8128" layer="16"/>
 <wire x1="12.7" y1="25.4" x2="20.32" y2="25.4" width="0.8128" layer="16"/>
 <wire x1="20.32" y1="25.4" x2="20.32" y2="30.48" width="0.8128" layer="16"/>
+<contactref element="MULTIPLEXER" pad="3"/>
+<wire x1="15.24" y1="38.1" x2="17.78" y2="38.1" width="0.8128" layer="16"/>
 </signal>
-<signal name="N$21">
-<contactref element="U1" pad="3"/>
-<contactref element="IC1" pad="9"/>
+<signal name="S3">
+<contactref element="MULTIPLEXER" pad="9"/>
 <wire x1="10.16" y1="50.8" x2="7.62" y2="50.8" width="1.27" layer="16"/>
 <wire x1="7.62" y1="50.8" x2="7.62" y2="48.26" width="1.27" layer="16"/>
 <wire x1="7.62" y1="48.26" x2="5.08" y2="45.72" width="1.27" layer="16"/>
-<wire x1="15.24" y1="20.32" x2="15.24" y2="22.86" width="1.27" layer="16"/>
 <wire x1="15.24" y1="22.86" x2="10.16" y2="22.86" width="1.27" layer="16"/>
 <wire x1="10.16" y1="22.86" x2="5.08" y2="27.94" width="1.27" layer="16"/>
 <wire x1="5.08" y1="27.94" x2="5.08" y2="30.48" width="1.27" layer="16"/>
@@ -623,61 +613,43 @@ design rules under a new name.</description>
 <via x="5.08" y="38.1" extent="1-16" drill="0.9" diameter="1.9304" shape="square"/>
 <via x="5.08" y="30.48" extent="1-16" drill="0.9" diameter="1.9304" shape="square"/>
 <wire x1="5.08" y1="38.1" x2="5.08" y2="30.48" width="1.27" layer="1"/>
+<contactref element="ATTINY_BABYGNUSBUINO" pad="3"/>
+<wire x1="15.24" y1="22.86" x2="15.24" y2="20.32" width="0.254" layer="16"/>
 </signal>
-<signal name="N$22">
-<contactref element="IC1" pad="10"/>
-<contactref element="U1" pad="5"/>
+<signal name="S2">
+<contactref element="MULTIPLEXER" pad="10"/>
 <wire x1="13.97" y1="31.75" x2="13.97" y2="48.26" width="0.8128" layer="16"/>
 <wire x1="13.97" y1="48.26" x2="10.16" y2="48.26" width="0.8128" layer="16"/>
-<wire x1="17.78" y1="27.94" x2="13.97" y2="31.75" width="0.8128" layer="16"/>
+<contactref element="ATTINY_BABYGNUSBUINO" pad="5"/>
+<wire x1="13.97" y1="31.75" x2="17.78" y2="27.94" width="0.8128" layer="16"/>
 </signal>
-<signal name="N$23">
-<contactref element="IC1" pad="11"/>
-<contactref element="U1" pad="6"/>
+<signal name="S1">
+<contactref element="MULTIPLEXER" pad="11"/>
 <wire x1="12.7" y1="30.48" x2="12.7" y2="45.72" width="0.8128" layer="16"/>
 <wire x1="12.7" y1="45.72" x2="10.16" y2="45.72" width="0.8128" layer="16"/>
+<contactref element="ATTINY_BABYGNUSBUINO" pad="6"/>
 <wire x1="12.7" y1="30.48" x2="15.24" y2="27.94" width="0.8128" layer="16"/>
 </signal>
 <signal name="N$9">
 </signal>
-<signal name="N$6">
-<contactref element="IC1" pad="15"/>
-<contactref element="SV8" pad="2"/>
-<wire x1="10.16" y1="35.56" x2="7.62" y2="35.56" width="1.27" layer="16"/>
-</signal>
-<signal name="N$7">
-<contactref element="IC1" pad="14"/>
-<contactref element="SV8" pad="3"/>
-<wire x1="10.16" y1="38.1" x2="7.62" y2="38.1" width="1.27" layer="16"/>
-</signal>
-<signal name="N$8">
-<contactref element="IC1" pad="13"/>
-<contactref element="SV8" pad="4"/>
-<wire x1="10.16" y1="40.64" x2="7.62" y2="40.64" width="1.27" layer="16"/>
-</signal>
-<signal name="N$10">
-<contactref element="IC1" pad="12"/>
-<contactref element="SV8" pad="5"/>
-<wire x1="10.16" y1="43.18" x2="7.62" y2="43.18" width="1.27" layer="16"/>
-</signal>
-<signal name="N$11">
-<contactref element="IC1" pad="1"/>
-<contactref element="SV9" pad="2"/>
+<signal name="INPUT_8">
+<contactref element="PINHEADER_5_8" pad="2"/>
+<contactref element="MULTIPLEXER" pad="1"/>
 <wire x1="17.78" y1="33.02" x2="20.32" y2="35.56" width="0.6096" layer="16"/>
 </signal>
-<signal name="N$12">
-<contactref element="IC1" pad="2"/>
-<contactref element="SV9" pad="3"/>
+<signal name="INPUT_7">
+<contactref element="PINHEADER_5_8" pad="3"/>
+<contactref element="MULTIPLEXER" pad="2"/>
 <wire x1="17.78" y1="35.56" x2="20.32" y2="38.1" width="0.6096" layer="16"/>
 </signal>
-<signal name="N$13">
-<contactref element="IC1" pad="4"/>
-<contactref element="SV9" pad="4"/>
+<signal name="INPUT_6">
+<contactref element="PINHEADER_5_8" pad="4"/>
+<contactref element="MULTIPLEXER" pad="4"/>
 <wire x1="17.78" y1="40.64" x2="20.32" y2="40.64" width="1.27" layer="16"/>
 </signal>
-<signal name="N$14">
-<contactref element="IC1" pad="5"/>
-<contactref element="SV9" pad="5"/>
+<signal name="INPUT_5">
+<contactref element="PINHEADER_5_8" pad="5"/>
+<contactref element="MULTIPLEXER" pad="5"/>
 <wire x1="17.78" y1="43.18" x2="20.32" y2="43.18" width="1.27" layer="16"/>
 </signal>
 <signal name="N$15">
@@ -688,6 +660,31 @@ design rules under a new name.</description>
 <wire x1="13.1446" y1="9.606" x2="13.1446" y2="9.9568" width="0.8128" layer="16"/>
 </signal>
 <signal name="N$17">
+</signal>
+<signal name="D_MINUS">
+<contactref element="R2" pad="2"/>
+<contactref element="ATTINY_BABYGNUSBUINO" pad="1"/>
+<wire x1="10.16" y1="15.24" x2="10.16" y2="20.32" width="0.254" layer="1"/>
+</signal>
+<signal name="INPUT_1">
+<contactref element="PINHEADER_1_4" pad="5"/>
+<contactref element="MULTIPLEXER" pad="12"/>
+<wire x1="10.16" y1="43.18" x2="7.62" y2="43.18" width="1.27" layer="16"/>
+</signal>
+<signal name="INPUT_2">
+<contactref element="PINHEADER_1_4" pad="4"/>
+<contactref element="MULTIPLEXER" pad="13"/>
+<wire x1="10.16" y1="40.64" x2="7.62" y2="40.64" width="1.27" layer="16"/>
+</signal>
+<signal name="INPUT_3">
+<contactref element="PINHEADER_1_4" pad="3"/>
+<contactref element="MULTIPLEXER" pad="14"/>
+<wire x1="10.16" y1="38.1" x2="7.62" y2="38.1" width="1.27" layer="16"/>
+</signal>
+<signal name="INPUT_4">
+<contactref element="PINHEADER_1_4" pad="2"/>
+<contactref element="MULTIPLEXER" pad="15"/>
+<wire x1="10.16" y1="35.56" x2="7.62" y2="35.56" width="1.27" layer="16"/>
 </signal>
 </signals>
 <errors>

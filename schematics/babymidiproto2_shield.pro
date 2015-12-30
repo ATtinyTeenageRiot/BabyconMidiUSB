@@ -2,14 +2,14 @@ EAGLE AutoRouter Statistics:
 
 Job           : /Users/xcorex/Documents/Projects/EagleCad/projects/lifepatch/BabyconMidiUSB/babymidiproto2_shield.brd
 
-Start at      : 08:53:22 (11/29/15)
-End at        : 08:53:22 (11/29/15)
+Start at      : 11:58:05 (12/30/15)
+End at        : 11:58:05 (12/30/15)
 Elapsed time  : 00:00:00
 
 Signals       :    23   RoutingGrid: 50 mil  Layers: 2
 Connections   :    32   predefined:  32 ( 2 Vias )
 
-Router memory :   6448
+Router memory :   6996
 
 Passname          :     Route Optimize1 Optimize2 Optimize3 Optimize4
 

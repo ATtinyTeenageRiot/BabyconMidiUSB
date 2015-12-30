@@ -526,7 +526,7 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="ATTINY_BABYGNUSBUINO" library="manticore-lib" package="DIP254P762X533-8" value="TINY85-20-DIP" x="17.78" y="27.94" rot="R90"/>
+<element name="ATTINY_BABYGNUSBUINO" library="manticore-lib" package="DIP254P762X533-8" value="TINY85-20-DIP" x="13.97" y="24.13"/>
 <element name="R1" library="manticore-lib" package="0703" value="68" x="16.51" y="17.78" rot="R180"/>
 <element name="R2" library="manticore-lib" package="0703" value="68" x="6.35" y="15.24"/>
 <element name="R3" library="manticore-lib" package="0703" value="1K5" x="2.54" y="21.59" rot="R90"/>
@@ -577,9 +577,9 @@ design rules under a new name.</description>
 <vertex x="5.08" y="50.8"/>
 </polygon>
 <contactref element="MULTIPLEXER" pad="6"/>
+<contactref element="ATTINY_BABYGNUSBUINO" pad="4"/>
 <contactref element="PINHEADER_5_8" pad="1"/>
 <wire x1="20.32" y1="33.02" x2="24.13" y2="33.02" width="1.27" layer="16"/>
-<contactref element="ATTINY_BABYGNUSBUINO" pad="4"/>
 </signal>
 <signal name="VCC">
 <contactref element="MINIUSB_CONNECTOR" pad="1"/>
@@ -593,11 +593,11 @@ design rules under a new name.</description>
 <wire x1="2.54" y1="22.86" x2="2.54" y2="25.4" width="1.016" layer="16"/>
 <wire x1="12.3192" y1="11.314" x2="12.3192" y2="11.049" width="1.016" layer="16"/>
 <wire x1="2.54" y1="25.4" x2="2.54" y2="33.02" width="1.27" layer="16"/>
+<contactref element="ATTINY_BABYGNUSBUINO" pad="8"/>
 <contactref element="PINHEADER_1_4" pad="1"/>
 <wire x1="10.16" y1="33.02" x2="7.62" y2="33.02" width="1.27" layer="16"/>
+<wire x1="10.16" y1="33.02" x2="13.97" y2="31.75" width="1.27" layer="16"/>
 <wire x1="2.54" y1="33.02" x2="7.62" y2="33.02" width="1.27" layer="16"/>
-<contactref element="ATTINY_BABYGNUSBUINO" pad="8"/>
-<wire x1="10.16" y1="33.02" x2="10.16" y2="27.94" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$2">
 <contactref element="MINIUSB_CONNECTOR" pad="3"/>
@@ -625,14 +625,14 @@ design rules under a new name.</description>
 <signal name="D_PLUS">
 <contactref element="R1" pad="2"/>
 <contactref element="ATTINY_BABYGNUSBUINO" pad="2"/>
-<wire x1="12.7" y1="17.78" x2="12.7" y2="20.32" width="1.27" layer="16"/>
+<wire x1="12.7" y1="17.78" x2="6.35" y2="29.21" width="1.27" layer="16"/>
 </signal>
 <signal name="MULTIPLEXED_ANALOG_PIN">
 <contactref element="ATTINY_BABYGNUSBUINO" pad="7"/>
 <wire x1="20.32" y1="30.48" x2="17.78" y2="30.48" width="0.8128" layer="16"/>
 <wire x1="17.78" y1="30.48" x2="15.24" y2="33.02" width="0.8128" layer="16"/>
 <wire x1="15.24" y1="33.02" x2="15.24" y2="38.1" width="0.8128" layer="16"/>
-<wire x1="12.7" y1="27.94" x2="12.7" y2="25.4" width="0.8128" layer="16"/>
+<wire x1="13.97" y1="29.21" x2="12.7" y2="25.4" width="0.8128" layer="16"/>
 <wire x1="12.7" y1="25.4" x2="20.32" y2="25.4" width="0.8128" layer="16"/>
 <wire x1="20.32" y1="25.4" x2="20.32" y2="30.48" width="0.8128" layer="16"/>
 <contactref element="MULTIPLEXER" pad="3"/>
@@ -651,21 +651,21 @@ design rules under a new name.</description>
 <via x="5.08" y="30.48" extent="1-16" drill="0.9" diameter="1.9304" shape="square"/>
 <wire x1="5.08" y1="38.1" x2="5.08" y2="30.48" width="1.27" layer="1"/>
 <contactref element="ATTINY_BABYGNUSBUINO" pad="3"/>
-<wire x1="15.24" y1="22.86" x2="15.24" y2="20.32" width="1.27" layer="16"/>
+<wire x1="15.24" y1="22.86" x2="6.35" y2="26.67" width="1.27" layer="16"/>
 </signal>
 <signal name="S2">
 <contactref element="MULTIPLEXER" pad="10"/>
 <wire x1="13.97" y1="31.75" x2="13.97" y2="48.26" width="0.8128" layer="16"/>
 <wire x1="13.97" y1="48.26" x2="10.16" y2="48.26" width="0.8128" layer="16"/>
 <contactref element="ATTINY_BABYGNUSBUINO" pad="5"/>
-<wire x1="13.97" y1="31.75" x2="17.78" y2="27.94" width="0.8128" layer="16"/>
+<wire x1="13.97" y1="31.75" x2="13.97" y2="24.13" width="0.8128" layer="16"/>
 </signal>
 <signal name="S1">
 <contactref element="MULTIPLEXER" pad="11"/>
 <wire x1="12.7" y1="30.48" x2="12.7" y2="45.72" width="0.8128" layer="16"/>
 <wire x1="12.7" y1="45.72" x2="10.16" y2="45.72" width="0.8128" layer="16"/>
 <contactref element="ATTINY_BABYGNUSBUINO" pad="6"/>
-<wire x1="12.7" y1="30.48" x2="15.24" y2="27.94" width="0.8128" layer="16"/>
+<wire x1="12.7" y1="30.48" x2="13.97" y2="26.67" width="0.8128" layer="16"/>
 </signal>
 <signal name="N$9">
 </signal>
@@ -701,7 +701,7 @@ design rules under a new name.</description>
 <signal name="D_MINUS">
 <contactref element="R2" pad="2"/>
 <contactref element="ATTINY_BABYGNUSBUINO" pad="1"/>
-<wire x1="10.16" y1="15.24" x2="10.16" y2="20.32" width="1.27" layer="16"/>
+<wire x1="10.16" y1="15.24" x2="6.35" y2="31.75" width="1.27" layer="16"/>
 </signal>
 <signal name="INPUT_1">
 <contactref element="PINHEADER_1_4" pad="5"/>
