@@ -1,3 +1,5 @@
+//#define GNUSBUINOMIDI_ENABLE_ANDROID    //enable this to add android compability (but broke in windows)
+
 #include "GnusbuinoMIDI.h"
 #include "AnalogMultiplexerPin.h"
 
