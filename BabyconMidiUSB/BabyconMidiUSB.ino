@@ -1,6 +1,6 @@
 //#define GNUSBUINOMIDI_ENABLE_ANDROID    //enable this to add android compability (but broke in windows)
 
-#include "GnusbuinoMIDI.h"
+#include "TeenyMidi.h"
 #include "AnalogMultiplexerPin.h"
 
 #define NOISE_RATIO 10
@@ -28,7 +28,7 @@ uint8_t values_old[8]   = {1,1,1,1,1,1,1,1};
 uint8_t value_order[8]  = {3,0,1,2,5,7,6,4}; //remap multiplexer pin
 
 void setup ( ) {
-    MIDI.init();
+    TeenyMidi.init();
     multiplexer.setup(_S1, _S2, _S3, MULTIPLEXED_ANALOG_PIN);
     for (channel = 0; channel < NUM_CHANNEL; channel++) {
       multiplexer.setInitialValue(value_order[channel]);
@@ -41,7 +41,7 @@ uint8_t readChannel (unsigned char num, unsigned char order )
     values[order] = multiplexer.read(value_order[num], NOISE_RATIO)>>3;  
     
     #ifdef DELAY_AFTER_READ
-    MIDI.delay(DELAY_AFTER_READ);
+    TeenyMidi.delay(DELAY_AFTER_READ);
     #endif
 }
 
@@ -50,12 +50,12 @@ void loop () {
   for (channel = 0; channel < NUM_CHANNEL; channel++) {    
     readChannel(selected[channel], channel);      
     if (values[channel] != values_old[channel]) {
-        MIDI.write(MIDI_CONTROLCHANGE, channel+1, values[channel]);
+        TeenyMidi.send(MIDI_CONTROLCHANGE, channel+1, values[channel]);
         values_old[channel] = values[channel];
     }
   }
 
-  MIDI.flush();
+  TeenyMidi.update();
   
 }
 
